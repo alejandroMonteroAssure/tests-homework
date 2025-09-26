@@ -1,0 +1,27 @@
+npm install --save-dev vitest @testing-library/react @testing-library/jest-dom @testing-library/user-event
+
+npm install tailwindcss @tailwindcss/vite
+
+"scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:watch": "vitest --watch"
+  },
+
+  setuptest.d.ts
+
+
+  /// <reference types="vitest" />
+import "@testing-library/jest-dom";
+
+declare module "vitest" {
+  interface Assertion<T = any> extends jest.Matchers<void, T> {}
+}
+
+
+setuptest.ts
+
+import "@testing-library/jest-dom";
